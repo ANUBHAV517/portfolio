@@ -99,3 +99,44 @@ function asideSectionTogglerBtn() {
     allSection[i].classList.toggle('open');
   }
 }
+
+// var data = {
+//   service_id: 'YOUR_SERVICE_ID',
+//   template_id: 'YOUR_TEMPLATE_ID',
+//   user_id: 'YOUR_PUBLIC_KEY',
+//   template_params: {
+//     username: 'Anubhav',
+//     // 'g-recaptcha-response': '03AHJ_ASjnLA214KSNKFJAK12sfKASfehbmfd...',
+//   },
+// };
+
+// $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+//   type: 'POST',
+//   data: JSON.stringify(data),
+//   contentType: 'application/json',
+// })
+//   .done(function () {
+//     alert('Your mail is sent!');
+//   })
+//   .fail(function (error) {
+//     alert('Oops... ' + JSON.stringify(error));
+//   });
+
+function sendMail() {
+  let param = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    subject: document.getElementById('subject').value,
+    message: document.getElementById('message').value,
+  };
+
+  emailjs.send('service_g2iyb9e', 'template_ojmqyfp', param).then(
+    () => {
+      alert('Message sent successfully!');
+    },
+    (err) => {
+      alert('Failed to send message. Please try again.');
+      console.log('Failed to send email. Error: ', err);
+    }
+  );
+}

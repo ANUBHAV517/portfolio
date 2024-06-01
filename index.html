@@ -131,7 +131,12 @@
                   years.My expertise is to create websites and develope a React
                   Integration app and many more....
                 </p>
-                <a href="#" class="btn">Download Resume</a>
+                <a
+                  class="btn"
+                  href="assets/AnubhavResume.pdf"
+                  download="Anubhav_Srivastava_CV.pdf"
+                  >Download Resume</a
+                >
               </div>
               <div class="home-img padd-15">
                 <img src="image/myimg.png" alt="" />
@@ -627,6 +632,7 @@
                         type="text"
                         class="form-control"
                         placeholder="Name"
+                        id="name"
                       />
                     </div>
                   </div>
@@ -636,6 +642,7 @@
                         type="email"
                         class="form-control"
                         placeholder="Email"
+                        id="email"
                       />
                     </div>
                   </div>
@@ -647,6 +654,7 @@
                         type="text"
                         class="form-control"
                         placeholder="Subject"
+                        id="subject"
                       />
                     </div>
                   </div>
@@ -658,14 +666,16 @@
                         name=""
                         class="form-control"
                         placeholder="Message"
-                        id=""
+                        id="message"
                       ></textarea>
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-item col-12 padd-15">
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit" onclick="sendMail()" class="btn">
+                      Send Message
+                    </button>
                   </div>
                 </div>
               </div>
@@ -708,5 +718,16 @@
     ></script>
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: 'HOrgSiiR3LGh-qt91',
+        });
+      })();
+    </script>
   </body>
 </html>
